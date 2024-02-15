@@ -1,12 +1,18 @@
+import React from "react";
 import Navbar from "./components/Navbar/Navbar";
-import { useTheme } from "./contexts/themeContext";
-import { Switch } from "@headlessui/react";
+import HeroSection from "./sections/Hero";
+import AboutSection from "./sections/About";
+import Tokenomics from "./sections/Tokenomics";
 
 function App() {
   return (
     <>
-      <div className="bg-white dark:bg-[#191230] text-[#0D0720] dark:text-[#fff] w-full max-w-7xl mx-auto">
+      <div className="relative z-10 bg-white dark:bg-[#0D0720] text-[#0D0720] dark:text-[#fff] w-full max-w-7xl mx-auto overflow-hidden">
         <Navbar />
+
+        <HeroSection />
+        <AboutSection />
+        <Tokenomics />
       </div>
     </>
   );

@@ -2,7 +2,7 @@ import * as React from "react";
 
 const DownloadIcon = (props) => (
   <svg
-    className="stroke-[#0D0720] dark:stroke-white ml-2"
+    className="stroke-[#0D0720] dark:stroke-white hidden lg:flex"
     xmlns="http://www.w3.org/2000/svg"
     width={24}
     height={25}
