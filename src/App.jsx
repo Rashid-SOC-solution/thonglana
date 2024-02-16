@@ -3,6 +3,10 @@ import Navbar from "./components/Navbar/Navbar";
 import HeroSection from "./sections/Hero";
 import AboutSection from "./sections/About";
 import Tokenomics from "./sections/Tokenomics";
+import Highlights from "./sections/Highlights";
+import Buy from "./sections/Buy";
+import Video from "./sections/Video";
+import Roadmap from "./sections/Roadmap";
 
 function App() {
   return (
@@ -13,6 +17,10 @@ function App() {
         <HeroSection />
         <AboutSection />
         <Tokenomics />
+        <Highlights />
+        <Buy />
+        <Video />
+        <Roadmap />
       </div>
     </>
   );

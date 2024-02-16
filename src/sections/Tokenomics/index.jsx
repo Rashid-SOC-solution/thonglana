@@ -1,8 +1,12 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
+import { CategoryScale, Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import "chart.js/auto";
 
 import RadialBlur from "./RadialBlur";
+import { useTheme } from "../../contexts/themeContext";
+
+Chart.register(ArcElement, Tooltip, Legend);
 
 const data = {
   labels: ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5", "Label 6"],
@@ -30,6 +34,7 @@ const data = {
       borderWidth: 0,
     },
   ],
+  text: "Total: 9000+",
 };
 
 const options = {
@@ -79,10 +84,9 @@ const TileData = [
   },
 ];
 
-const Tile = ({ key, text, amount, color }) => {
+const Tile = ({ text, amount, color }) => {
   return (
     <div
-      key={key}
       className="flex justify-between px-6 py-2 my-2 text-lg rounded-[12px] font-semibold items-center border-l-[6px] bg-white/50 dark:bg-[#191230]/50 backdrop-blur-sm"
       style={{ borderColor: color }}
     >
@@ -93,6 +97,28 @@ const Tile = ({ key, text, amount, color }) => {
 };
 
 function Tokenomics() {
+  const { theme } = useTheme();
+
+  const textCenter = {
+    id: "textCenter",
+    beforeDatasetsDraw(chart, args, pluginOptions) {
+      const { ctx } = chart;
+
+      ctx.save();
+      ctx.font = "bolder 20px Inter";
+      ctx.fillStyle = theme == "dark" ? "#fff" : "#0D0720 text-center";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(
+        "$50,000,000",
+        230,
+        230
+        // chart.getDatasetMeta(0).data(0).x,
+        // chart.getDatasetMeta(0).data(0).y
+      );
+    },
+  };
+
   return (
     <div className="mt-40 mx-5 md:mx-40 text-center">
       <h3 className="font-extrabold text-3xl md:text-4xl lg:text-5xl leading-8 md:leading-[55px]">
@@ -105,17 +131,24 @@ function Tokenomics() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-10">
         <div className="pt-6">
-          <Doughnut height={50} className="" data={data} options={options} />
+          <Doughnut
+            height={50}
+            className=""
+            data={data}
+            options={options}
+            plugins={[textCenter]}
+          />
         </div>
         <div className="relative pt-12">
           <div className="relative z-10">
             {TileData.map((item) => (
-              <Tile
-                key={item.id}
-                text={item.text}
-                amount={item.amount}
-                color={item.color}
-              />
+              <div key={item.id}>
+                <Tile
+                  text={item.text}
+                  amount={item.amount}
+                  color={item.color}
+                />
+              </div>
             ))}
           </div>
           <RadialBlur />

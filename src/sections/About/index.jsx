@@ -23,13 +23,13 @@ function AboutSection() {
             </div>
           </div>
 
-          <div className="flex justify-end items-center order-1 md:order-2 mb-14 md:mb-0">
+          <div className="flex justify-center md:justify-end items-center order-1 md:order-2 mb-14 md:mb-0">
             <img className="w-[380px] h-auto" src="/about-1.png" />
           </div>
         </div>
 
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 mt-40 md:mx-40 mx-5">
-          <div className="relative flex justify-start items-center mb-14 md:mb-0">
+          <div className="relative flex justify-center md:justify-start items-center mb-14 md:mb-0">
             <img className="w-[380px] h-auto" src="/about-2.png" />
             <div className="absolute z-20 h-full bg-gradient-to-tr from-white dark:from-[#0D0720] w-80 top-0"></div>
           </div>
