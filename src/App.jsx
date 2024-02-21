@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer";
 import HeroSection from "./sections/Hero";
 import AboutSection from "./sections/About";
 import Tokenomics from "./sections/Tokenomics";
@@ -7,6 +8,8 @@ import Highlights from "./sections/Highlights";
 import Buy from "./sections/Buy";
 import Video from "./sections/Video";
 import Roadmap from "./sections/Roadmap";
+import CTA from "./sections/CTA";
+import FAQs from "./sections/FAQs";
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
         <Buy />
         <Video />
         <Roadmap />
+        <CTA />
+        <FAQs />
+        <Footer />
       </div>
     </>
   );

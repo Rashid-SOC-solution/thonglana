@@ -2,6 +2,8 @@ import SectionContainer from "../../components/Layout/SectionContainer";
 import Heading from "../../components/Heading";
 import HeadingPara from "../../components/Heading/HeadingPara";
 import Emphasis from "../../components/Text/Emphasis";
+import RoadmapTimeline from "./Timeline";
+import RadialBlur from "./RadialBlur";
 
 function Roadmap() {
   return (
@@ -13,8 +15,10 @@ function Roadmap() {
             Nisi et volutpat pulvinar purus. Consequat sit mauris eget sed
             feugiat. Tellus non ut nibh eleifend maecenas erat.{" "}
           </HeadingPara>
+          <RoadmapTimeline />
         </SectionContainer>
       </div>
+      <RadialBlur />
     </div>
   );
 }
