@@ -7,19 +7,20 @@ import RadialBlur from "./RadialBlur";
 
 function Roadmap() {
   return (
-    <div className="relative">
-      <div className="relative z-10">
+    <section id="roadmap">
+    <div className="relative mt-20">
+      <div className="relative z-10" data-aos="fade-up">
         <SectionContainer>
-          <Heading>Thonglana Roadmap</Heading>
+          <Heading >ThongMap</Heading>
           <HeadingPara>
-            Nisi et volutpat pulvinar purus. Consequat sit mauris eget sed
-            feugiat. Tellus non ut nibh eleifend maecenas erat.{" "}
+          Navigating the cheeky terrain of humor with pit stops at laugh-out-loud landmarks and meme-filled milestones. $TLana your roadmap to a giggly adventure!
           </HeadingPara>
           <RoadmapTimeline />
         </SectionContainer>
       </div>
       <RadialBlur />
     </div>
+    </section>
   );
 }
 

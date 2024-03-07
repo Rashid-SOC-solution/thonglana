@@ -10,17 +10,27 @@ import Video from "./sections/Video";
 import Roadmap from "./sections/Roadmap";
 import CTA from "./sections/CTA";
 import FAQs from "./sections/FAQs";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+    });
+  }, []);
   return (
     <>
-      <div className="relative z-10 bg-white dark:bg-[#0D0720] text-[#0D0720] dark:text-[#fff] w-full max-w-7xl mx-auto overflow-hidden">
+      <div className="relative z-10 bg-white dark:bg-[#0D0720] text-[#0D0720] dark:text-[#fff] w-full mx-auto overflow-hidden">
         <Navbar />
-
         <HeroSection />
         <AboutSection />
         <Tokenomics />
-        <Highlights />
+        {/* <Highlights /> */}
         <Buy />
         <Video />
         <Roadmap />

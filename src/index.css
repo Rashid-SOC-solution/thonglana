@@ -24,7 +24,16 @@ body {
   width: 100vw; */
   margin: 0;
   padding: 0;
+
+
 }
+
+
+
+.marginCss:nth-last-child(-n+3) {
+  margin-top: 20px;
+}
+
 
 .video-responsive {
   overflow: hidden;
@@ -42,4 +51,46 @@ body {
   width: 100%;
   position: absolute;
   z-index: 20;
+}
+
+@media screen and (max-width: 560px) {
+
+  .star-responsive {
+    top: 150px !important;
+  }
+}
+
+
+
+@media screen and (max-width: 764px) {
+
+  .imageCss{
+    width: 220px !important;
+    height: 332px !important;
+  }
+
+  .paddingClass{
+    padding-inline: 22px !important;
+  }
+
+  .Doughnut{
+    height: 351px !important;
+    width: 100% !important;
+}
+
+.buttonPadding{
+  padding: 12px !important;
+  padding-inline: 35px !important;
+}
+}
+
+
+@media screen and (min-width: 800px) {
+
+.Doughnut{
+    height: 373px !important;
+    width: 375px !important;
+}
+
+
 }

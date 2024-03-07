@@ -11,13 +11,15 @@
   },
   "dependencies": {
     "@headlessui/react": "^0.0.0-insiders.08baf09",
+    "aos": "^2.3.4",
     "chart.js": "^4.4.1",
     "install": "^0.13.0",
     "lucide-react": "^0.330.0",
     "npm": "^10.4.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-scroll": "^1.9.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.55",

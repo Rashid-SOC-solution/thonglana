@@ -110,9 +110,9 @@ function Tokenomics() {
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillText(
-        "$50,000,000",
-        230,
-        230
+        "",
+        288,
+        288
         // chart.getDatasetMeta(0).data(0).x,
         // chart.getDatasetMeta(0).data(0).y
       );
@@ -120,20 +120,21 @@ function Tokenomics() {
   };
 
   return (
-    <div className="mt-40 mx-5 md:mx-40 text-center">
+    <div className="mt-40 mx-5 md:mx-40 text-center" data-aos="fade-up">
       <h3 className="font-extrabold text-3xl md:text-4xl lg:text-5xl leading-8 md:leading-[55px]">
-        <span className="text-[#E01E5A]">Tokenomics</span> Explained
+        <span className="text-[#E01E5A]">Thongonomics</span>
       </h3>
       <p className="text-lg md:text-xl my-5">
-        Nisi et volutpat pulvinar purus. Consequat sit mauris eget sed feugiat.
-        Tellus non ut nibh eleifend maecenas erat.
+        Unveiling the Cheeky Economics Behind ThongLana Token!
+
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-10">
         <div className="pt-6">
           <Doughnut
             height={50}
-            className=""
+            width={20}
+            className="Doughnut"
             data={data}
             options={options}
             plugins={[textCenter]}

@@ -36,8 +36,8 @@ const Card = ({ id, heading, para }) => {
 
 function Highlights() {
   return (
-    <div className="relative">
-      <div className="relative z-10">
+    <div className="relative mt-10" >
+      <div className="relative z-10" data-aos="fade-up">
         <SectionContainer>
           <Heading>
             Exciting thonglana <Emphasis>highlights</Emphasis>
@@ -47,7 +47,7 @@ function Highlights() {
             feugiat. Tellus non ut nibh eleifend maecenas erat.{" "}
           </HeadingPara>
 
-          <div className="grid px-7 md:px-0 gird-col-1 md:grid-cols-3 text-start my-20 gap-5">
+          <div className="grid px-7 md:px-0 gird-col-1 md:grid-cols-3 text-start my-20 gap-5" data-aos="fade-up">
             {data.map((item) => (
               <div key={`higlights-${item.id}`}>
                 <Card id={item.id} heading={item.heading} para={item.para} />

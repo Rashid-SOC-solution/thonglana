@@ -20,16 +20,15 @@ const YoutubeEmbed = ({ embedId }) => (
 
 function Video() {
   return (
-    <div className="relative">
-      <div className="relative z-10">
+    <div className="relative mt-10" data-aos="fade-up">
+      <div className="relative z-10" >
         <SectionContainer>
           <Heading>
-            Watch our
-            <Emphasis> video</Emphasis>
+          LanaFlix
+            <Emphasis></Emphasis>
           </Heading>
           <HeadingPara>
-            Nisi et volutpat pulvinar purus. Consequat sit mauris eget sed
-            feugiat. Tellus non ut nibh eleifend maecenas erat.{" "}
+            Watch our project here{" "}
           </HeadingPara>
           <YoutubeEmbed embedId="rokGy0huYEA" />
         </SectionContainer>

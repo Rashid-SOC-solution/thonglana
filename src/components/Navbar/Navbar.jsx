@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { Link } from "react-scroll";
 import NavbarLogo from "../../assets/svgs/Logo";
 import DownloadIcon from "../../assets/svgs/DownloadIcon";
 import PrimaryButton from "../Buttons/PrimaryButton";
@@ -6,40 +7,43 @@ import SecondaryButton from "../Buttons/SecondaryButton";
 import ThemeSwitch from "../Buttons/ThemeSwitcher";
 import RadialBlur from "./RadialBlur";
 
-const NavLink = ({ text, href }) => {
+const NavLink = ({ text, to }) => {
   return (
-    <a
-      href={href}
+    <Link
+      to={to}
+      spy={true}
+      smooth={true}
+      duration={500}
       className="text-[14px] md:text-[16px] font-semibold hover:text-[#E01E5A] transition duration-150 ease-in-out"
     >
       {text}
-    </a>
+    </Link>
   );
 };
 
 const links = [
   {
     text: "Home",
-    href: "#home",
+    to: "home",
   },
   {
     text: "About",
-    href: "#about",
+    to: "about",
   },
   {
     text: "Roadmap",
-    href: "#roadmap",
+    to: "roadmap",
   },
   {
     text: "FAQs",
-    href: "#faqs",
+    to: "faqs",
   },
 ];
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const toogle = () => {
+  const toggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
@@ -56,15 +60,9 @@ function Navbar() {
         </div>
         <div className="flex items-center lg:ml-40">
           <div className="hidden md:flex space-x-2 md:space-x-4 lg:space-x-8 mr-0 md:mr-2 lg:mr-10">
-            {links.map(function (link) {
-              return (
-                <NavLink
-                  key={Math.random().toString()}
-                  text={link.text}
-                  href={link.href}
-                />
-              );
-            })}
+            {links.map((link, index) => (
+              <NavLink key={index} text={link.text} to={link.to} />
+            ))}
           </div>
         </div>
 
@@ -84,7 +82,7 @@ function Navbar() {
           </span>
           <button
             type="button"
-            onClick={() => toogle()}
+            onClick={toggle}
             id="main-menu"
             aria-label="Main menu"
             aria-haspopup="true"
@@ -107,34 +105,11 @@ function Navbar() {
         </div>
       </nav>
       <div
-        className={`${
-          isMobileMenuOpen ? "block" : "hidden"
-        } md:hidden px-2 pt-2 pb-4`}
+        className={`${isMobileMenuOpen ? "block" : "hidden"} md:hidden px-2 pt-2 pb-4`}
       >
-        <a
-          href="#"
-          className="block text-center hover:text-[#E01E5A] hover:shadow-lg px-6 py-3"
-        >
-          Home
-        </a>
-        <a
-          href="#"
-          className="block text-center hover:text-[#E01E5A] hover:shadow-lg px-6 py-3"
-        >
-          About
-        </a>
-        <a
-          href="#"
-          className="block text-center hover:text-[#E01E5A] hover:shadow-lg px-6 py-3"
-        >
-          Roadmap
-        </a>
-        <a
-          href="#"
-          className="block text-center hover:text-[#E01E5A] hover:shadow-lg px-6 py-3"
-        >
-          FAQs
-        </a>
+        {links.map((link, index) => (
+          <NavLink key={index} text={link.text} to={link.to} />
+        ))}
         <div className="w-full flex flex-col justify-center space-y-2">
           <SecondaryButton title="Whitepaper" rightIcon={DownloadIcon} />
           <PrimaryButton title="Get Token" />
