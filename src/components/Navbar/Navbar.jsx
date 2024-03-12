@@ -10,14 +10,14 @@ import ThemeSwitch from "../Buttons/ThemeSwitcher";
 import RadialBlur from "./RadialBlur";
 import { useTheme } from "../../contexts/themeContext";
 
-const NavLink = ({ text, to }) => {
+const NavLink = ({ className, text, to }) => {
   return (
     <Link
       to={to}
       spy={true}
       smooth={true}
       duration={500}
-      className="text-[14px] md:text-[16px] font-semibold hover:text-[#E01E5A] transition duration-150 ease-in-out"
+      className={className}
     >
       {text}
     </Link>
@@ -57,15 +57,14 @@ function Navbar() {
         <div className="flex items-center">
           <div className="flex items-center justify-between w-full md:w-auto">
             <a href="#" aria-label="Home">
-              <NavbarLogo />
-              {/* <img src={theme == "light" ? logoDark : logoLight} alt="" /> */}
+              <img style={{ width: "152px", height: "29px" }} src={theme == "light" ? logoDark : logoLight} alt="" />
             </a>
           </div>
         </div>
         <div className="flex items-center lg:ml-40">
           <div className="hidden md:flex space-x-2 md:space-x-4 lg:space-x-8 mr-0 md:mr-2 lg:mr-10">
             {links.map((link, index) => (
-              <NavLink key={index} text={link.text} to={link.to} />
+              <NavLink className="text-[14px] md:text-[16px] font-semibold hover:text-[#E01E5A] transition duration-150 ease-in-out" key={index} text={link.text} to={link.to} />
             ))}
           </div>
         </div>
@@ -112,7 +111,7 @@ function Navbar() {
         className={`${isMobileMenuOpen ? "block" : "hidden"} md:hidden px-2 pt-2 pb-4`}
       >
         {links.map((link, index) => (
-          <NavLink key={index} text={link.text} to={link.to} />
+          <NavLink className="block text-center hover:text-[#E01E5A] hover:shadow-lg px-6 py-3" key={index} text={link.text} to={link.to} />
         ))}
         <div className="w-full flex flex-col justify-center space-y-2">
           <SecondaryButton title="Whitepaper" rightIcon={DownloadIcon} />
