@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 import NavbarLogo from "../../assets/svgs/Logo";
+import logoDark from '../../assets/images/logo-dark.png'
+import logoLight from '../../assets/images/logo-light.png';
 import DownloadIcon from "../../assets/svgs/DownloadIcon";
 import PrimaryButton from "../Buttons/PrimaryButton";
 import SecondaryButton from "../Buttons/SecondaryButton";
 import ThemeSwitch from "../Buttons/ThemeSwitcher";
 import RadialBlur from "./RadialBlur";
+import { useTheme } from "../../contexts/themeContext";
 
 const NavLink = ({ text, to }) => {
   return (
@@ -42,7 +45,7 @@ const links = [
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const { theme, toggleTheme } = useTheme();
   const toggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -55,6 +58,7 @@ function Navbar() {
           <div className="flex items-center justify-between w-full md:w-auto">
             <a href="#" aria-label="Home">
               <NavbarLogo />
+              {/* <img src={theme == "light" ? logoDark : logoLight} alt="" /> */}
             </a>
           </div>
         </div>
