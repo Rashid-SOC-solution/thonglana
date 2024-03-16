@@ -130,7 +130,7 @@ function Tokenomics() {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-10">
-        <div className="pt-6">
+        <div className="flex justify-center items-center pt-6">
           <Doughnut
             height={50}
             width={20}
