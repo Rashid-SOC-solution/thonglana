@@ -5,7 +5,7 @@ import RadialBlur from "./RadialBlur";
 
 function AboutSection() {
   return (
-    <section id="about"> 
+    <section id="about">
       <div className="relative ">
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 mt-40 md:mx-40 mx-5">
           <div className="text-center md:text-left order-2 md:order-1">

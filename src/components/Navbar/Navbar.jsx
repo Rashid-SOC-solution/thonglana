@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 import NavbarLogo from "../../assets/svgs/Logo";
-import logoDark from '../../assets/images/logo-dark.png'
-import logoLight from '../../assets/images/logo-light.png';
+import logoDark from '../../assets/images/logo-dark.svg'
+import logoLight from '../../assets/images/logo-light.svg';
 import DownloadIcon from "../../assets/svgs/DownloadIcon";
 import PrimaryButton from "../Buttons/PrimaryButton";
 import SecondaryButton from "../Buttons/SecondaryButton";

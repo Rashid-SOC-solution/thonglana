@@ -7,6 +7,7 @@ import Tokenomics from "./sections/Tokenomics";
 import Highlights from "./sections/Highlights";
 import Buy from "./sections/Buy";
 import Video from "./sections/Video";
+import Video2 from "./sections/anotherVideo";
 import Roadmap from "./sections/Roadmap";
 import CTA from "./sections/CTA";
 import FAQs from "./sections/FAQs";
@@ -34,6 +35,7 @@ function App() {
         <Buy />
         <Video />
         <Roadmap />
+        <Video2 />
         <CTA />
         <FAQs />
         <Footer />

@@ -1,4 +1,5 @@
 import React from "react";
+import logo from '../../assets/images/logo-light.svg'
 import NavbarLogo from "../../assets/svgs/Logo";
 
 const Footer = () => {
@@ -8,7 +9,9 @@ const Footer = () => {
         <div className="flex flex-wrap items-center justify-between -mx-4">
           <div className="flex flex-wrap md:flex-nowrap justify-center w-full  px-5 md:px-40">
             <div className="px-4">
-              <h2 className="text-3xl text-center font-bold">thonglana</h2>
+              <h2 className="flex justify-center">
+                <img src={logo} alt="" />
+              </h2>
               <p className="mt-2 text-md text-center text-gray-400">
                 Unleashing laughter with every thread, where <span className="text-[#E01E5A]">memes</span><br></br>{" "} meet utility in the most cheeky and entertaining way on web3 🚀
               </p>
